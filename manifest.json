@@ -4,8 +4,15 @@
   "name": "Quick Float",
   "description": "Simple chrome extension to display float values of CS:GO skins on the steam market",
   "version": "1.0",
-
+  "icons": { "128": "quick_float.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://steamcommunity.com/market/listings/730/*"],
+      "js": ["float.js"]
+    }
+  ],
   "browser_action": {
+    "default_title": "",
     "default_icon": "quick_float.png",
     "default_popup": "popup.html"
   },
