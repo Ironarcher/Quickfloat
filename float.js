@@ -3,6 +3,7 @@ var ddns = []; //list of dids
 var mdns = []; //list of listingids
 window.alert("float.js active");
 loadIDs()
+injectValues();
 //loadValues()
 /*document.onkeydown = function() {
 	window.alert("keydown");
@@ -13,12 +14,12 @@ function injectValues()
   var link_elements = document.getElementsByClassName("market_listing_item_name_block");
   var i;
   for (i = 0; i < link_elements.length; i++) {
-	  var idval = arra[i]; //go through each item id
+	  var idval = 1; //go through each item id
 	  if(idval == 0) {
 		  //RIPPERINO ITEM HAS BEEN SOLD, dont inject anything
 	  } else {
 		  var link =link_elements[i].childNodes[1]; //finds all labels for each weapon ie. AK-47 | Redline (Field-Tested) 
-			var floatval = IDtoFloat(idval);
+			var floatval = (adns[i]);
 		  link.textContent=link.textContent.substr(0, link.textContent.length-1)+": " + floatval + ")"; //inject result into label ie. AK-47 | Redline (Field-Tested: 5724994217) 
 		  /*var id = link.substring(86,96) fyi second parameter is length not ending position */
 	  }
@@ -73,7 +74,7 @@ function loadIDs()
 												   //1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10, making the second set of 10 redundant
 					adns.push(scripts[i].innerText.substr(locs3[l]+6, 10)); //find itemid value in javascript for each item, the (a) value
 				}
-				//window.alert("DONE");
+				window.alert("DONE");
 			}
 
 		}
